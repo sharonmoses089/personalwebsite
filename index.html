@@ -8,8 +8,6 @@
 <meta name="keywords" content="Sharon Moses, Dual Student, Accenture, DHBW Stuttgart, BWL, Digital Commerce, digitale Transformation" />
 <meta name="author" content="Sharon Moses" />
 <meta name="robots" content="index, follow" />
-
-<!-- Open Graph (LinkedIn, WhatsApp etc.) -->
 <meta property="og:title" content="Sharon Moses | Dual Student BWL & Digital Commerce" />
 <meta property="og:description" content="Dual Student bei Accenture & DHBW Stuttgart — wo wirtschaftliches Denken auf technisches Verständnis trifft." />
 <meta property="og:type" content="website" />
@@ -28,10 +26,14 @@
     --grey-light: #e8e4dc;
     --grey-mid: #9a9590;
     --text: #1a1814;
+    --scroll-offset: 90px;
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--text); overflow-x: hidden; }
+
+  /* Scroll offset so golden eyebrow stays visible after nav */
+  section[id] { scroll-margin-top: var(--scroll-offset); }
 
   /* NAV */
   nav {
@@ -47,7 +49,7 @@
   .nav-links a:hover { color: var(--accent); }
   .nav-cta { background: var(--accent) !important; color: var(--navy) !important; padding: .4rem 1.2rem; border-radius: 2px; font-weight: 500; }
 
-  /* ── HAMBURGER ── */
+  /* HAMBURGER */
   .hamburger {
     display: none; flex-direction: column; gap: 5px;
     cursor: pointer; background: none; border: none;
@@ -63,19 +65,14 @@
   .hamburger.open span:nth-child(2) { opacity: 0; }
   .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
-  /* ── MOBILE BACKDROP ── */
+  /* MOBILE BACKDROP */
   .mobile-backdrop {
     display: none; position: fixed; inset: 0; z-index: 98;
-    background: rgba(0,0,0,0);
-    transition: background .35s ease;
-    pointer-events: none;
+    background: rgba(0,0,0,0); transition: background .35s ease; pointer-events: none;
   }
-  .mobile-backdrop.open {
-    display: block; pointer-events: all;
-    background: rgba(0,0,0,.45);
-  }
+  .mobile-backdrop.open { display: block; pointer-events: all; background: rgba(0,0,0,.45); }
 
-  /* ── MOBILE SLIDE PANEL ── */
+  /* MOBILE SLIDE PANEL */
   .mobile-menu {
     position: fixed; top: 0; right: 0; bottom: 0;
     width: min(78vw, 320px); z-index: 99;
@@ -92,7 +89,7 @@
     padding: 1rem 1.4rem;
     display: flex; justify-content: space-between; align-items: center;
     border-bottom: 1px solid rgba(200,169,110,.08);
-    min-height: 60px;
+    min-height: 60px; flex-shrink: 0;
   }
   .mobile-menu-label {
     font-size: .68rem; letter-spacing: .22em;
@@ -102,24 +99,22 @@
     background: none; border: none; cursor: pointer;
     width: 32px; height: 32px;
     display: flex; align-items: center; justify-content: center;
-    color: var(--accent); font-size: 1.1rem;
-    border-radius: 50%;
+    color: var(--accent); font-size: 1.1rem; border-radius: 50%;
     transition: background .2s;
   }
   .mobile-close-btn:hover { background: rgba(200,169,110,.1); }
 
+  /* TOP-aligned nav links (not centered) */
   .mobile-nav-links {
-    flex: 1; padding: 1.5rem 0;
+    flex: 1; padding: 0.5rem 0 1rem;
     display: flex; flex-direction: column;
-    justify-content: center; list-style: none;
-    overflow-y: auto;
+    justify-content: flex-start;
+    list-style: none; overflow-y: auto;
   }
   .mobile-nav-links li a {
     display: flex; align-items: center; justify-content: space-between;
-    padding: 1rem 1.6rem;
-    text-decoration: none;
-    color: rgba(245,242,236,.8);
-    font-size: 1rem; letter-spacing: .02em;
+    padding: 1rem 1.6rem; text-decoration: none;
+    color: rgba(245,242,236,.8); font-size: 1rem; letter-spacing: .02em;
     border-bottom: 1px solid rgba(200,169,110,.06);
     transition: color .2s, background .2s;
   }
@@ -127,19 +122,13 @@
     content: '→'; color: rgba(200,169,110,.3);
     font-size: .8rem; transition: color .2s, transform .2s;
   }
-  .mobile-nav-links li a:hover {
-    color: var(--accent); background: rgba(200,169,110,.04);
-  }
-  .mobile-nav-links li a:hover::after {
-    color: var(--accent); transform: translateX(3px);
-  }
-  .mobile-nav-links li:last-child a {
-    color: var(--accent); font-weight: 500; border-bottom: none;
-  }
+  .mobile-nav-links li a:hover { color: var(--accent); background: rgba(200,169,110,.04); }
+  .mobile-nav-links li a:hover::after { color: var(--accent); transform: translateX(3px); }
+  .mobile-nav-links li:last-child a { color: var(--accent); font-weight: 500; border-bottom: none; }
 
   .mobile-menu-footer {
     padding: 1.2rem 1.6rem;
-    border-top: 1px solid rgba(200,169,110,.08);
+    border-top: 1px solid rgba(200,169,110,.08); flex-shrink: 0;
   }
   .mobile-menu-footer p {
     font-size: .7rem; letter-spacing: .08em;
@@ -253,9 +242,7 @@
   #about { background: var(--navy); padding: 6rem 5rem; }
   .about-content { max-width: 720px; margin: 0 auto; text-align: center; }
   .about-text { font-size: .95rem; line-height: 1.85; color: rgba(245,242,236,.72); margin-bottom: 1.4rem; }
-  .about-highlights {
-    display: flex; flex-wrap: wrap; justify-content: center; gap: .8rem; margin-top: 2rem;
-  }
+  .about-highlights { display: flex; flex-wrap: wrap; justify-content: center; gap: .8rem; margin-top: 2rem; }
   .highlight-item {
     display: flex; align-items: center; gap: .4rem; font-size: .82rem; color: var(--accent-pale);
     padding: .4rem .9rem; border: 1px solid rgba(200,169,110,.15); border-radius: 2px;
@@ -283,42 +270,24 @@
   #skills { background: var(--white); }
   .skills-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; margin-top: 3rem; }
   .skill-group {
-    background: var(--navy);
-    border: 1px solid rgba(200,169,110,.12);
-    padding: 2rem 1.6rem 1.8rem;
-    border-radius: 16px;
+    background: var(--navy); border: 1px solid rgba(200,169,110,.12);
+    padding: 2rem 1.6rem 1.8rem; border-radius: 16px;
     transition: transform .3s cubic-bezier(.22,.68,0,1.2), box-shadow .3s, border-color .3s;
     position: relative; overflow: hidden;
   }
   .skill-group::before {
-    content: '';
-    position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
     background: linear-gradient(to right, transparent, rgba(200,169,110,.4), transparent);
   }
-  .skill-group:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 16px 40px rgba(0,0,0,.25);
-    border-color: rgba(200,169,110,.28);
-  }
-  .skill-group-title {
-    font-size: .72rem; letter-spacing: .18em; text-transform: uppercase;
-    color: var(--accent); margin-bottom: 1rem; font-weight: 500;
-  }
+  .skill-group:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(0,0,0,.25); border-color: rgba(200,169,110,.28); }
+  .skill-group-title { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; font-weight: 500; }
   .skill-tag {
-    display: inline-block;
-    background: rgba(255,255,255,.06);
-    color: rgba(245,242,236,.8);
-    font-size: .78rem; padding: .32rem .85rem;
-    border-radius: 999px;
-    margin: .25rem .2rem 0 0;
-    border: 1px solid rgba(255,255,255,.1);
+    display: inline-block; background: rgba(255,255,255,.06); color: rgba(245,242,236,.8);
+    font-size: .78rem; padding: .32rem .85rem; border-radius: 999px;
+    margin: .25rem .2rem 0 0; border: 1px solid rgba(255,255,255,.1);
     transition: background .2s, color .2s, border-color .2s;
   }
-  .skill-tag:hover {
-    background: rgba(200,169,110,.18);
-    color: var(--accent);
-    border-color: rgba(200,169,110,.35);
-  }
+  .skill-tag:hover { background: rgba(200,169,110,.18); color: var(--accent); border-color: rgba(200,169,110,.35); }
 
   /* CONTACT */
   #contact { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); text-align: center; padding: 7rem 5rem; position: relative; overflow: hidden; }
@@ -335,65 +304,28 @@
   footer { background: var(--navy); padding: 1.5rem 5rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(200,169,110,.1); }
   footer span { color: rgba(245,242,236,.3); font-size: .75rem; }
 
-  /* ANIMATIONS */
   @keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
 
   /* HERO PHOTO */
-  .hero-photo-wrap {
-    position: absolute; inset: 0; z-index: 0;
-    overflow: hidden;
-  }
-  .hero-photo-wrap img {
-    width: 100%; height: 100%; object-fit: cover; object-position: center 20%;
-    filter: brightness(.28) saturate(.8);
-  }
-  .hero-photo-wrap::after {
-    content: '';
-    position: absolute; inset: 0;
-    background: linear-gradient(to bottom,
-      rgba(13,27,42,.55) 0%,
-      rgba(13,27,42,.35) 50%,
-      rgba(13,27,42,.75) 100%);
-  }
+  .hero-photo-wrap { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+  .hero-photo-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; filter: brightness(.28) saturate(.8); }
+  .hero-photo-wrap::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(13,27,42,.55) 0%, rgba(13,27,42,.35) 50%, rgba(13,27,42,.75) 100%); }
   #hero { position: relative; }
   .hero-inner { position: relative; z-index: 2; }
 
   /* ABOUT PHOTO */
   #about { position: relative; overflow: hidden; }
-  .about-grid {
-    display: grid; grid-template-columns: 1fr 1.1fr;
-    gap: 5rem; align-items: center; max-width: 1100px; margin: 0 auto;
-  }
+  .about-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 5rem; align-items: center; max-width: 1100px; margin: 0 auto; }
   .about-photo-col { position: relative; }
-  .about-photo-frame {
-    position: relative; border-radius: 2px; overflow: hidden;
-  }
-  .about-photo-frame::before {
-    content: '';
-    position: absolute; top: 1.5rem; left: 1.5rem; right: -1.5rem; bottom: -1.5rem;
-    border: 1px solid rgba(200,169,110,.25); border-radius: 2px; z-index: 0;
-  }
-  .about-photo-frame img {
-    width: 100%; height: 480px; object-fit: cover; object-position: center top;
-    display: block; border-radius: 2px; position: relative; z-index: 1;
-    transition: transform .5s ease;
-  }
+  .about-photo-frame { position: relative; border-radius: 2px; overflow: hidden; }
+  .about-photo-frame::before { content: ''; position: absolute; top: 1.5rem; left: 1.5rem; right: -1.5rem; bottom: -1.5rem; border: 1px solid rgba(200,169,110,.25); border-radius: 2px; z-index: 0; }
+  .about-photo-frame img { width: 100%; height: 480px; object-fit: cover; object-position: center top; display: block; border-radius: 2px; position: relative; z-index: 1; transition: transform .5s ease; }
   .about-photo-frame:hover img { transform: scale(1.03); }
-  .about-badge {
-    position: absolute; bottom: -2rem; right: -1rem; z-index: 2;
-    background: var(--accent); color: var(--navy);
-    padding: .8rem 1.2rem; border-radius: 2px;
-    font-size: .78rem; font-weight: 500; line-height: 1.5; text-align: center;
-    box-shadow: 0 6px 24px rgba(0,0,0,.3);
-  }
+  .about-badge { position: absolute; bottom: -2rem; right: -1rem; z-index: 2; background: var(--accent); color: var(--navy); padding: .8rem 1.2rem; border-radius: 2px; font-size: .78rem; font-weight: 500; line-height: 1.5; text-align: center; box-shadow: 0 6px 24px rgba(0,0,0,.3); }
   .about-badge strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; }
   .about-text-col { padding-left: 1rem; }
 
-  /* ════════════════════════════════
-     RESPONSIVE — TABLET & MOBILE
-     ════════════════════════════════ */
-
-  /* TABLET ≤ 960px */
+  /* TABLET */
   @media (max-width: 960px) {
     nav { padding: 1rem 2rem; }
     section { padding: 4rem 2rem; }
@@ -409,94 +341,60 @@
     footer { padding: 1rem 2rem; flex-direction: column; gap: .5rem; text-align: center; }
   }
 
-  /* MOBILE ≤ 600px */
+  /* MOBILE */
   @media (max-width: 600px) {
-    /* Nav */
+    :root { --scroll-offset: 80px; }
     nav { padding: .85rem 1.2rem; }
     .nav-links { display: none; }
     .hamburger { display: flex; }
-
-    /* Hero */
     #hero { min-height: 100svh; }
     .hero-inner { padding: 5.5rem 1.4rem 3.5rem; }
     .hero-eyebrow { font-size: .68rem; letter-spacing: .18em; }
-    .hero-eyebrow::before,
-    .hero-eyebrow::after { width: 1.2rem; }
+    .hero-eyebrow::before, .hero-eyebrow::after { width: 1.2rem; }
     .hero-name { font-size: clamp(2.6rem, 10vw, 3.5rem); }
     .hero-subtitle { font-size: .88rem; }
     .hero-org { font-size: .76rem; margin-bottom: 1.8rem; }
     .hero-divider { height: 2rem; margin-bottom: 1.4rem; }
     .hero-value { font-size: 1.05rem; line-height: 1.55; margin-bottom: 2rem; }
     .hero-actions { flex-direction: column; align-items: center; gap: .8rem; }
-    .btn-primary,
-    .btn-secondary { width: 100%; max-width: 280px; text-align: center; padding: .9rem 1.4rem; }
-
-    /* Sections */
+    .btn-primary, .btn-secondary { width: 100%; max-width: 280px; text-align: center; padding: .9rem 1.4rem; }
     section { padding: 3.2rem 1.2rem; }
     #about { padding: 3.2rem 1.2rem; }
     #contact { padding: 3.5rem 1.2rem; }
     .section-title { font-size: 1.75rem; }
-
-    /* Expertise */
     .expertise-grid { grid-template-columns: 1fr; gap: .9rem; }
     .expertise-card { padding: 1.6rem 1.3rem; }
     .expertise-num { font-size: 2.6rem; }
     .expertise-title { font-size: 1.2rem; }
     .expertise-text { font-size: .86rem; }
-
-    /* About */
     .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-    .about-photo-col {
-      display: block;
-      max-width: 260px; margin: 0 auto;
-    }
+    .about-photo-col { display: block; max-width: 260px; margin: 0 auto; }
     .about-photo-frame img { height: 300px; }
     .about-photo-frame::before { display: none; }
-    .about-badge {
-      position: static; margin-top: 1rem;
-      display: inline-block; font-size: .75rem;
-    }
+    .about-badge { position: static; margin-top: 1rem; display: inline-block; font-size: .75rem; }
     .about-text-col { padding-left: 0; }
     .about-text { font-size: .9rem; }
-
-    /* Timeline */
     .timeline { padding-left: 1rem; }
     .timeline::before { left: 0; }
-    .timeline-item {
-      grid-template-columns: 1fr;
-      gap: .3rem;
-      padding-left: 1.4rem;
-      margin-bottom: 1.8rem;
-    }
-    .timeline-date {
-      text-align: left; padding-right: 0;
-      color: var(--accent); font-size: .7rem;
-    }
+    .timeline-item { grid-template-columns: 1fr; gap: .3rem; padding-left: 1.4rem; margin-bottom: 1.8rem; }
+    .timeline-date { text-align: left; padding-right: 0; color: var(--accent); font-size: .7rem; }
     .timeline-dot { left: -1.55rem; top: .35rem; }
     .timeline-body { padding: 1.1rem 1.1rem; }
     .timeline-body:hover { transform: none; }
     .timeline-role { font-size: 1.05rem; }
     .timeline-desc { font-size: .82rem; }
-
-    /* Skills */
     .skills-grid { grid-template-columns: 1fr; gap: .9rem; }
     .skill-group { padding: 1.3rem; }
     .skill-group:hover { transform: none; }
-
-    /* Contact */
     .contact-tagline { font-size: 1.5rem; }
     .contact-actions { flex-direction: column; align-items: center; gap: .8rem; }
-    .contact-actions .btn-primary,
-    .contact-actions .btn-secondary { width: 100%; max-width: 280px; }
+    .contact-actions .btn-primary, .contact-actions .btn-secondary { width: 100%; max-width: 280px; }
     .contact-info { flex-direction: column; align-items: center; gap: .8rem; }
     .contact-info span { font-size: .82rem; }
-
-    /* Footer */
     footer { padding: 1rem 1.2rem; flex-direction: column; gap: .35rem; text-align: center; }
     footer span { font-size: .7rem; }
   }
 
-  /* Extra small ≤ 380px */
   @media (max-width: 380px) {
     .hero-name { font-size: 2.4rem; }
     .hero-value { font-size: .98rem; }
@@ -505,49 +403,23 @@
 
   /* READING GRADIENT */
   .reading-highlight {
-    position: fixed;
-    left: 0; right: 0;
-    height: 220px;
-    pointer-events: none;
-    z-index: 50;
-    background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      rgba(200,169,110,.055) 30%,
-      rgba(200,169,110,.10) 50%,
-      rgba(200,169,110,.055) 70%,
-      transparent 100%
-    );
-    mix-blend-mode: screen;
-    transition: top .08s linear;
-    will-change: transform;
+    position: fixed; left: 0; right: 0; height: 220px; pointer-events: none; z-index: 50;
+    background: linear-gradient(to bottom, transparent 0%, rgba(200,169,110,.055) 30%, rgba(200,169,110,.10) 50%, rgba(200,169,110,.055) 70%, transparent 100%);
+    mix-blend-mode: screen; transition: top .08s linear; will-change: transform;
   }
-
 </style>
 
-<!-- Structured Data JSON-LD -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Sharon Moses",
   "jobTitle": "Dual Student BWL & Digital Commerce Management",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "Accenture Technology Solutions BV & Co. KG"
-  },
-  "alumniOf": {
-    "@type": "EducationalOrganization",
-    "name": "DHBW Stuttgart"
-  },
+  "worksFor": { "@type": "Organization", "name": "Accenture Technology Solutions BV & Co. KG" },
+  "alumniOf": { "@type": "EducationalOrganization", "name": "DHBW Stuttgart" },
   "knowsAbout": ["Digital Commerce", "BWL", "Agile", "Scrum", "Datenanalyse", "Python", "Power BI"],
   "email": "sharon.m.moses@accenture.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "München",
-    "addressRegion": "Bayern",
-    "addressCountry": "DE"
-  }
+  "address": { "@type": "PostalAddress", "addressLocality": "München", "addressRegion": "Bayern", "addressCountry": "DE" }
 }
 </script>
 </head>
@@ -558,21 +430,19 @@
 <nav role="navigation" aria-label="Hauptnavigation">
   <div class="nav-logo">S. Moses</div>
   <ul class="nav-links">
-    <li><a href="#about">Über mich</a></li>
-    <li><a href="#expertise">Expertise</a></li>
-    <li><a href="#experience">Erfahrung</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#contact" class="nav-cta">Kontakt</a></li>
+    <li><a href="#about" class="desktop-link">Über mich</a></li>
+    <li><a href="#expertise" class="desktop-link">Expertise</a></li>
+    <li><a href="#experience" class="desktop-link">Erfahrung</a></li>
+    <li><a href="#skills" class="desktop-link">Skills</a></li>
+    <li><a href="#contact" class="nav-cta desktop-link">Kontakt</a></li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
-<!-- BACKDROP -->
 <div class="mobile-backdrop" id="mobileBackdrop"></div>
 
-<!-- SLIDE PANEL -->
 <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation">
   <div class="mobile-menu-header">
     <span class="mobile-menu-label">Navigation</span>
@@ -590,7 +460,6 @@
   </div>
 </div>
 
-<!-- HERO -->
 <section id="hero" role="banner">
   <div class="hero-bg-dots"></div>
   <div class="hero-photo-wrap"><img src="sharon-moses-hintergrund-webseite.jpg" alt="Sharon Moses vor dem Accenture Campus Kronberg — Dual Student BWL & Digital Commerce" /></div>
@@ -600,18 +469,14 @@
     <p class="hero-subtitle">BWL &amp; Digital Commerce Management</p>
     <p class="hero-org">Accenture Technology Solutions · DHBW Stuttgart</p>
     <div class="hero-divider"></div>
-    <p class="hero-value">
-      Ich verbinde wirtschaftliches Denken mit technischem Verständnis,
-      um digitale Transformation nicht nur zu verstehen, sondern aktiv zu gestalten.
-    </p>
+    <p class="hero-value">Ich verbinde wirtschaftliches Denken mit technischem Verständnis, um digitale Transformation nicht nur zu verstehen, sondern aktiv zu gestalten.</p>
     <div class="hero-actions">
-      <a href="#contact" class="btn-primary">Jetzt vernetzen</a>
-      <a href="#expertise" class="btn-secondary">Meine Expertise</a>
+      <a href="#contact" class="btn-primary desktop-link">Jetzt vernetzen</a>
+      <a href="#expertise" class="btn-secondary desktop-link">Meine Expertise</a>
     </div>
   </div>
 </section>
 
-<!-- EXPERTISE -->
 <section id="expertise" aria-label="Expertise">
   <div class="section-eyebrow reveal">Strategie trifft Umsetzung</div>
   <h2 class="section-title reveal reveal-delay-1">Drei Kompetenzen,<br>die einen Unterschied machen</h2>
@@ -619,34 +484,21 @@
     <div class="expertise-card reveal reveal-delay-1">
       <div class="expertise-num">01</div>
       <div class="expertise-title">Business &amp; Management</div>
-      <p class="expertise-text">
-        Strategisches Verständnis für Prozessorganisation und Controlling, geschärft durch
-        eine langjährige wirtschaftliche Spezialisierung. Die Fortführung dieser Expertise
-        an der DHBW Stuttgart ermöglicht es mir, betriebswirtschaftliche Theorie mit den
-        Anforderungen der digitalen Wirtschaft zu vereinen.
-      </p>
+      <p class="expertise-text">Strategisches Verständnis für Prozessorganisation und Controlling, geschärft durch eine langjährige wirtschaftliche Spezialisierung. Die Fortführung dieser Expertise an der DHBW Stuttgart ermöglicht es mir, betriebswirtschaftliche Theorie mit den Anforderungen der digitalen Wirtschaft zu vereinen.</p>
     </div>
     <div class="expertise-card reveal reveal-delay-2">
       <div class="expertise-num">02</div>
       <div class="expertise-title">Digitale Transformation</div>
-      <p class="expertise-text">
-        Praktische Erfahrung in Agile/Scrum, Projektmanagement und Requirements Engineering
-        durch das Accenture KickStart-Trainingsprogramm. Technisches Hintergrundwissen aus
-        einem früheren Ingenieursstudium mit Modulen in Datenanalyse und Algorithmen.
-      </p>
+      <p class="expertise-text">Praktische Erfahrung in Agile/Scrum, Projektmanagement und Requirements Engineering durch das Accenture KickStart-Trainingsprogramm. Technisches Hintergrundwissen aus einem früheren Ingenieursstudium mit Modulen in Datenanalyse und Algorithmen.</p>
     </div>
     <div class="expertise-card reveal reveal-delay-3">
       <div class="expertise-num">03</div>
       <div class="expertise-title">Analytik &amp; Problemlösung</div>
-      <p class="expertise-text">
-        Erfahrung in der Analyse von Telemetriedaten und Signalverarbeitungsalgorithmen (DLR).
-        Kombiniert mit Python-Kenntnissen und einem strukturierten, lösungsorientierten Arbeitsstil.
-      </p>
+      <p class="expertise-text">Erfahrung in der Analyse von Telemetriedaten und Signalverarbeitungsalgorithmen (DLR). Kombiniert mit Python-Kenntnissen und einem strukturierten, lösungsorientierten Arbeitsstil.</p>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about" aria-label="Über mich">
   <div class="about-grid">
     <div class="about-photo-col reveal">
@@ -661,26 +513,13 @@
     <div class="about-text-col">
       <div class="section-eyebrow reveal">Über mich</div>
       <h2 class="section-title light reveal reveal-delay-1">Wo Wirtschaft<br>auf Technik trifft</h2>
-      <p class="about-text reveal reveal-delay-1">
-        Ich bin Sharon Moses — Dual Student bei Accenture Technology Solutions und studiere
-        BWL &amp; Digital Commerce Management an der DHBW Stuttgart. Was mich ausmacht: Ich denke
-        wirtschaftlich und arbeite technisch präzise.
-      </p>
-      <p class="about-text reveal reveal-delay-2">
-        Brüche im Lebenslauf betrachte ich als wertvolle Perspektivwechsel. Mein Hintergrund
-        im Bauingenieurwesen und Management hat mein analytisches Denken geschärft und mir ein
-        stabiles Fundament in der Prozessorganisation gegeben. Diese Expertise setze ich gezielt
-        ein, um die digitale Transformation in komplexen Projektumfeldern aktiv zu gestalten.
-      </p>
-      <p class="about-text reveal reveal-delay-3">
-        Analytisches Denken, schnelle Auffassungsgabe und Teamarbeit — das sind keine
-        Phrasen für mich, sondern Eigenschaften, die ich täglich beweise.
-      </p>
+      <p class="about-text reveal reveal-delay-1">Ich bin Sharon Moses — Dual Student bei Accenture Technology Solutions und studiere BWL &amp; Digital Commerce Management an der DHBW Stuttgart. Was mich ausmacht: Ich denke wirtschaftlich und arbeite technisch präzise.</p>
+      <p class="about-text reveal reveal-delay-2">Brüche im Lebenslauf betrachte ich als wertvolle Perspektivwechsel. Mein Hintergrund im Bauingenieurwesen und Management hat mein analytisches Denken geschärft und mir ein stabiles Fundament in der Prozessorganisation gegeben. Diese Expertise setze ich gezielt ein, um die digitale Transformation in komplexen Projektumfeldern aktiv zu gestalten.</p>
+      <p class="about-text reveal reveal-delay-3">Analytisches Denken, schnelle Auffassungsgabe und Teamarbeit — das sind keine Phrasen für mich, sondern Eigenschaften, die ich täglich beweise.</p>
     </div>
   </div>
 </section>
 
-<!-- EXPERIENCE -->
 <section id="experience" aria-label="Berufliche Erfahrung">
   <div class="section-eyebrow reveal">Berufliche Stationen</div>
   <h2 class="section-title reveal reveal-delay-1">Erfahrung, die zählt</h2>
@@ -724,50 +563,32 @@
   </div>
 </section>
 
-<!-- SKILLS -->
 <section id="skills" aria-label="Kenntnisse und Fähigkeiten">
   <div class="section-eyebrow reveal">Kenntnisse &amp; Fähigkeiten</div>
   <h2 class="section-title reveal reveal-delay-1">Expertise &amp; Fokus</h2>
   <div class="skills-grid">
     <div class="skill-group reveal reveal-delay-1">
       <div class="skill-group-title">Software &amp; Tools</div>
-      <span class="skill-tag">Python</span>
-      <span class="skill-tag">MS Office</span>
-      <span class="skill-tag">Excel</span>
-      <span class="skill-tag">Power BI</span>
-      <span class="skill-tag">Power Apps</span>
-      <span class="skill-tag">CAD / Solibri</span>
+      <span class="skill-tag">Python</span><span class="skill-tag">MS Office</span><span class="skill-tag">Excel</span><span class="skill-tag">Power BI</span><span class="skill-tag">Power Apps</span><span class="skill-tag">CAD / Solibri</span>
     </div>
     <div class="skill-group reveal reveal-delay-2">
       <div class="skill-group-title">Methoden</div>
-      <span class="skill-tag">Agile / Scrum</span>
-      <span class="skill-tag">Projektmanagement</span>
-      <span class="skill-tag">Requirements Eng.</span>
-      <span class="skill-tag">Datenanalyse</span>
-      <span class="skill-tag">Automation</span>
+      <span class="skill-tag">Agile / Scrum</span><span class="skill-tag">Projektmanagement</span><span class="skill-tag">Requirements Eng.</span><span class="skill-tag">Datenanalyse</span><span class="skill-tag">Automation</span>
     </div>
     <div class="skill-group reveal reveal-delay-3">
       <div class="skill-group-title">Zielbranchen</div>
-      <span class="skill-tag">Automotive</span>
-      <span class="skill-tag">Consulting / Banking</span>
-      <span class="skill-tag">Sales</span>
-      <span class="skill-tag">Energy &amp; Sustainability</span>
+      <span class="skill-tag">Automotive</span><span class="skill-tag">Consulting / Banking</span><span class="skill-tag">Sales</span><span class="skill-tag">Energy &amp; Sustainability</span>
     </div>
     <div class="skill-group reveal reveal-delay-3">
       <div class="skill-group-title">Sprachen</div>
-      <span class="skill-tag">Deutsch (C1)</span>
-      <span class="skill-tag">Englisch (B2)</span>
-      <span class="skill-tag">Spanisch (A1)</span>
+      <span class="skill-tag">Deutsch (C1)</span><span class="skill-tag">Englisch (B2)</span><span class="skill-tag">Spanisch (A1)</span>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" aria-label="Kontakt">
   <div class="section-eyebrow reveal" style="justify-content:center">Kontakt</div>
-  <h2 class="contact-tagline reveal reveal-delay-1">
-    <em>Gemeinsam neue Perspektiven schaffen.</em>
-  </h2>
+  <h2 class="contact-tagline reveal reveal-delay-1"><em>Gemeinsam neue Perspektiven schaffen.</em></h2>
   <div class="contact-actions reveal reveal-delay-2">
     <a href="#" onclick="window.location.href='mai'+'lto:sharon.m.moses'+'@accenture.com';return false;" class="btn-primary">E-Mail schreiben</a>
     <a href="https://www.linkedin.com/in/sharon-moses-02754b283/" target="_blank" class="btn-secondary">LinkedIn Profil</a>
@@ -784,6 +605,24 @@
 </footer>
 
 <script>
+  // Shared smooth scroll function — respects --scroll-offset
+  function smoothScrollTo(targetId) {
+    const target = document.querySelector(targetId);
+    if (!target) return;
+    const offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--scroll-offset')) || 90;
+    const top = target.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top, behavior: 'smooth' });
+  }
+
+  // Desktop nav links
+  document.querySelectorAll('.desktop-link[href^="#"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      smoothScrollTo(this.getAttribute('href'));
+    });
+  });
+
+  // Mobile menu
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
   const mobileBackdrop = document.getElementById('mobileBackdrop');
@@ -810,14 +649,19 @@
   });
   closeMenuBtn.addEventListener('click', closeMenuFn);
   mobileBackdrop.addEventListener('click', closeMenuFn);
-  document.querySelectorAll('.mobile-link').forEach(l =>
-    l.addEventListener('click', closeMenuFn)
-  );
 
-  // ESC key closes menu
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeMenuFn();
+  // Mobile links: close panel first, then scroll with offset
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      closeMenuFn();
+      setTimeout(() => smoothScrollTo(targetId), 420);
+    });
   });
+
+  // ESC closes menu
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenuFn(); });
 
   // Scroll-reveal
   const observer = new IntersectionObserver((entries) => {

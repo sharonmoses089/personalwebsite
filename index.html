@@ -46,17 +46,105 @@
   .nav-links a { color: rgba(245,242,236,.7); text-decoration: none; font-size: .82rem; letter-spacing: .12em; text-transform: uppercase; transition: color .2s; }
   .nav-links a:hover { color: var(--accent); }
   .nav-cta { background: var(--accent) !important; color: var(--navy) !important; padding: .4rem 1.2rem; border-radius: 2px; font-weight: 500; }
-  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: .3rem; }
-  .hamburger span { display: block; width: 22px; height: 2px; background: var(--accent); border-radius: 2px; transition: transform .3s, opacity .3s; }
-  .mobile-menu {
-    display: none; position: fixed; inset: 0; z-index: 99;
-    background: rgba(13,27,42,.97);
-    flex-direction: column; align-items: center; justify-content: center; gap: 2rem;
+
+  /* ── HAMBURGER ── */
+  .hamburger {
+    display: none; flex-direction: column; gap: 5px;
+    cursor: pointer; background: none; border: none;
+    padding: .4rem; z-index: 200;
   }
-  .mobile-menu.open { display: flex; }
-  .mobile-menu a { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--white); text-decoration: none; letter-spacing: .08em; transition: color .2s; }
-  .mobile-menu a:hover { color: var(--accent); }
-  .close-btn { position: absolute; top: 1.4rem; right: 1.4rem; background: none; border: none; color: var(--accent); font-size: 1.8rem; cursor: pointer; }
+  .hamburger span {
+    display: block; width: 22px; height: 1.5px;
+    background: var(--accent); border-radius: 2px;
+    transition: transform .35s cubic-bezier(.4,0,.2,1), opacity .25s;
+    transform-origin: center;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+  /* ── MOBILE BACKDROP ── */
+  .mobile-backdrop {
+    display: none; position: fixed; inset: 0; z-index: 98;
+    background: rgba(0,0,0,0);
+    transition: background .35s ease;
+    pointer-events: none;
+  }
+  .mobile-backdrop.open {
+    display: block; pointer-events: all;
+    background: rgba(0,0,0,.45);
+  }
+
+  /* ── MOBILE SLIDE PANEL ── */
+  .mobile-menu {
+    position: fixed; top: 0; right: 0; bottom: 0;
+    width: min(78vw, 320px); z-index: 99;
+    background: var(--navy);
+    border-left: 1px solid rgba(200,169,110,.12);
+    transform: translateX(100%);
+    transition: transform .4s cubic-bezier(.4,0,.2,1);
+    display: flex; flex-direction: column;
+    overflow: hidden; pointer-events: all;
+  }
+  .mobile-menu.open { transform: translateX(0); }
+
+  .mobile-menu-header {
+    padding: 1rem 1.4rem;
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 1px solid rgba(200,169,110,.08);
+    min-height: 60px;
+  }
+  .mobile-menu-label {
+    font-size: .68rem; letter-spacing: .22em;
+    text-transform: uppercase; color: rgba(200,169,110,.5);
+  }
+  .mobile-close-btn {
+    background: none; border: none; cursor: pointer;
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--accent); font-size: 1.1rem;
+    border-radius: 50%;
+    transition: background .2s;
+  }
+  .mobile-close-btn:hover { background: rgba(200,169,110,.1); }
+
+  .mobile-nav-links {
+    flex: 1; padding: 1.5rem 0;
+    display: flex; flex-direction: column;
+    justify-content: center; list-style: none;
+    overflow-y: auto;
+  }
+  .mobile-nav-links li a {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 1.6rem;
+    text-decoration: none;
+    color: rgba(245,242,236,.8);
+    font-size: 1rem; letter-spacing: .02em;
+    border-bottom: 1px solid rgba(200,169,110,.06);
+    transition: color .2s, background .2s;
+  }
+  .mobile-nav-links li a::after {
+    content: '→'; color: rgba(200,169,110,.3);
+    font-size: .8rem; transition: color .2s, transform .2s;
+  }
+  .mobile-nav-links li a:hover {
+    color: var(--accent); background: rgba(200,169,110,.04);
+  }
+  .mobile-nav-links li a:hover::after {
+    color: var(--accent); transform: translateX(3px);
+  }
+  .mobile-nav-links li:last-child a {
+    color: var(--accent); font-weight: 500; border-bottom: none;
+  }
+
+  .mobile-menu-footer {
+    padding: 1.2rem 1.6rem;
+    border-top: 1px solid rgba(200,169,110,.08);
+  }
+  .mobile-menu-footer p {
+    font-size: .7rem; letter-spacing: .08em;
+    color: rgba(245,242,236,.2); line-height: 1.6;
+  }
 
   /* HERO */
   #hero {
@@ -193,7 +281,6 @@
 
   /* SKILLS */
   #skills { background: var(--white); }
-  /* SKILLS — dark rounded cards */
   .skills-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; margin-top: 3rem; }
   .skill-group {
     background: var(--navy);
@@ -251,10 +338,6 @@
   /* ANIMATIONS */
   @keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
 
-  /* TABLET */
-  
-  /* MOBILE */
-  
   /* HERO PHOTO */
   .hero-photo-wrap {
     position: absolute; inset: 0; z-index: 0;
@@ -305,8 +388,6 @@
   }
   .about-badge strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; }
   .about-text-col { padding-left: 1rem; }
-
-    
 
   /* ════════════════════════════════
      RESPONSIVE — TABLET & MOBILE
@@ -363,7 +444,7 @@
     .expertise-title { font-size: 1.2rem; }
     .expertise-text { font-size: .86rem; }
 
-    /* About — show photo on mobile too, but smaller */
+    /* About */
     .about-grid { grid-template-columns: 1fr; gap: 2rem; }
     .about-photo-col {
       display: block;
@@ -422,8 +503,7 @@
     .btn-primary, .btn-secondary { max-width: 100%; }
   }
 
-
-  /* READING GRADIENT — scroll-linked text highlighter */
+  /* READING GRADIENT */
   .reading-highlight {
     position: fixed;
     left: 0; right: 0;
@@ -474,6 +554,7 @@
 <body>
 
 <div class="reading-highlight" id="readingHighlight"></div>
+
 <nav role="navigation" aria-label="Hauptnavigation">
   <div class="nav-logo">S. Moses</div>
   <ul class="nav-links">
@@ -483,18 +564,30 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#contact" class="nav-cta">Kontakt</a></li>
   </ul>
-  <button class="hamburger" id="hamburger" aria-label="Menü">
+  <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
-<div class="mobile-menu" id="mobileMenu">
-  <button class="close-btn" id="closeMenu">✕</button>
-  <a href="#about" class="mobile-link">Über mich</a>
-  <a href="#expertise" class="mobile-link">Expertise</a>
-  <a href="#experience" class="mobile-link">Erfahrung</a>
-  <a href="#skills" class="mobile-link">Skills</a>
-  <a href="#contact" class="mobile-link" style="color:var(--accent)">Kontakt</a>
+<!-- BACKDROP -->
+<div class="mobile-backdrop" id="mobileBackdrop"></div>
+
+<!-- SLIDE PANEL -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation">
+  <div class="mobile-menu-header">
+    <span class="mobile-menu-label">Navigation</span>
+    <button class="mobile-close-btn" id="closeMenu" aria-label="Menü schließen">✕</button>
+  </div>
+  <ul class="mobile-nav-links">
+    <li><a href="#about" class="mobile-link">Über mich</a></li>
+    <li><a href="#expertise" class="mobile-link">Expertise</a></li>
+    <li><a href="#experience" class="mobile-link">Erfahrung</a></li>
+    <li><a href="#skills" class="mobile-link">Skills</a></li>
+    <li><a href="#contact" class="mobile-link">Kontakt</a></li>
+  </ul>
+  <div class="mobile-menu-footer">
+    <p>Accenture Technology Solutions<br>DHBW Stuttgart · © 2026</p>
+  </div>
 </div>
 
 <!-- HERO -->
@@ -693,11 +786,40 @@
 <script>
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
-  const closeMenu = document.getElementById('closeMenu');
-  hamburger.addEventListener('click', () => mobileMenu.classList.add('open'));
-  closeMenu.addEventListener('click', () => mobileMenu.classList.remove('open'));
-  document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => mobileMenu.classList.remove('open')));
+  const mobileBackdrop = document.getElementById('mobileBackdrop');
+  const closeMenuBtn = document.getElementById('closeMenu');
 
+  function openMenu() {
+    mobileMenu.classList.add('open');
+    mobileBackdrop.classList.add('open');
+    hamburger.classList.add('open');
+    hamburger.setAttribute('aria-label', 'Menü schließen');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenuFn() {
+    mobileMenu.classList.remove('open');
+    mobileBackdrop.classList.remove('open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-label', 'Menü öffnen');
+    document.body.style.overflow = '';
+  }
+
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.contains('open') ? closeMenuFn() : openMenu();
+  });
+  closeMenuBtn.addEventListener('click', closeMenuFn);
+  mobileBackdrop.addEventListener('click', closeMenuFn);
+  document.querySelectorAll('.mobile-link').forEach(l =>
+    l.addEventListener('click', closeMenuFn)
+  );
+
+  // ESC key closes menu
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenuFn();
+  });
+
+  // Scroll-reveal
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.12 });

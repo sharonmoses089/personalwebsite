@@ -4,38 +4,26 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!-- ═══════════════════════════════════════════════
-     SEO: Title & Meta
-     ═══════════════════════════════════════════════ -->
-<title>Sharon Moses | Dual Studentin BWL & Digital Commerce Management bei Accenture</title>
-<meta name="description" content="Sharon Moses — Dual Studentin bei Accenture Technology Solutions und DHBW Stuttgart. BWL & Digital Commerce Management mit Fokus auf digitale Transformation, Agile/Scrum und Datenanalyse. Jetzt vernetzen." />
-<meta name="keywords" content="Sharon Moses, Dual Studentin, Accenture, DHBW Stuttgart, BWL, Digital Commerce Management, digitale Transformation, Agile, Scrum, Python, Power BI" />
+<title>Sharon Moses | Dualer Student BWL & Digital Commerce Management bei Accenture</title>
+<meta name="description" content="Sharon Moses — Dualer Student bei Accenture Technology Solutions und DHBW Stuttgart. BWL & Digital Commerce Management mit Fokus auf digitale Transformation, Agile/Scrum und Datenanalyse. Jetzt vernetzen." />
+<meta name="keywords" content="Sharon Moses, Dualer Student, Accenture, DHBW Stuttgart, BWL, Digital Commerce Management, digitale Transformation, Agile, Scrum, Python, Power BI" />
 <meta name="author" content="Sharon Moses" />
 <meta name="robots" content="index, follow" />
 
-<!-- ═══════════════════════════════════════════════
-     SEO: Canonical URL (Platzhalter – bitte anpassen)
-     ═══════════════════════════════════════════════ -->
 <link rel="canonical" href="https://www.sharon-moses.de/" />
 
-<!-- ═══════════════════════════════════════════════
-     SEO: Open Graph (Social Media)
-     ═══════════════════════════════════════════════ -->
-<meta property="og:title" content="Sharon Moses | Dual Studentin BWL & Digital Commerce Management bei Accenture" />
-<meta property="og:description" content="Dual Studentin bei Accenture & DHBW Stuttgart — wo wirtschaftliches Denken auf technisches Verständnis trifft. Fokus auf digitale Transformation, Agile/Scrum und Datenanalyse." />
+<meta property="og:title" content="Sharon Moses | Dualer Student BWL & Digital Commerce Management bei Accenture" />
+<meta property="og:description" content="Dualer Student bei Accenture & DHBW Stuttgart — wo wirtschaftliches Denken auf technisches Verständnis trifft. Fokus auf digitale Transformation, Agile/Scrum und Datenanalyse." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.sharon-moses.de/" />
 <meta property="og:locale" content="de_DE" />
 <meta property="og:image" content="https://www.sharon-moses.de/sharon-moses-portrait.jpg" />
-<meta property="og:image:alt" content="Portrait von Sharon Moses, Dual Studentin BWL & Digital Commerce Management bei Accenture" />
+<meta property="og:image:alt" content="Portrait von Sharon Moses, Dualer Student BWL & Digital Commerce Management bei Accenture" />
 <meta property="og:site_name" content="Sharon Moses" />
 
-<!-- ═══════════════════════════════════════════════
-     SEO: Twitter Card
-     ═══════════════════════════════════════════════ -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Sharon Moses | Dual Studentin BWL & Digital Commerce Management" />
-<meta name="twitter:description" content="Dual Studentin bei Accenture & DHBW Stuttgart — digitale Transformation aktiv gestalten." />
+<meta name="twitter:title" content="Sharon Moses | Dualer Student BWL & Digital Commerce Management" />
+<meta name="twitter:description" content="Dualer Student bei Accenture & DHBW Stuttgart — digitale Transformation aktiv gestalten." />
 <meta name="twitter:image" content="https://www.sharon-moses.de/sharon-moses-portrait.jpg" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -57,11 +45,8 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--text); overflow-x: hidden; }
-
-  /* Scroll offset so golden eyebrow stays visible after nav */
   section[id] { scroll-margin-top: var(--scroll-offset); }
 
-  /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     padding: 1.2rem 4rem;
@@ -75,7 +60,6 @@
   .nav-links a:hover { color: var(--accent); }
   .nav-cta { background: var(--accent) !important; color: var(--navy) !important; padding: .4rem 1.2rem; border-radius: 2px; font-weight: 500; }
 
-  /* HAMBURGER */
   .hamburger {
     display: none; flex-direction: column; gap: 5px;
     cursor: pointer; background: none; border: none;
@@ -91,14 +75,12 @@
   .hamburger.open span:nth-child(2) { opacity: 0; }
   .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
-  /* MOBILE BACKDROP */
   .mobile-backdrop {
     display: none; position: fixed; inset: 0; z-index: 98;
     background: rgba(0,0,0,0); transition: background .35s ease; pointer-events: none;
   }
   .mobile-backdrop.open { display: block; pointer-events: all; background: rgba(0,0,0,.45); }
 
-  /* MOBILE SLIDE PANEL */
   .mobile-menu {
     position: fixed; top: 0; right: 0; bottom: 0;
     width: min(78vw, 320px); z-index: 99;
@@ -117,10 +99,7 @@
     border-bottom: 1px solid rgba(200,169,110,.08);
     min-height: 60px; flex-shrink: 0;
   }
-  .mobile-menu-label {
-    font-size: .68rem; letter-spacing: .22em;
-    text-transform: uppercase; color: rgba(200,169,110,.5);
-  }
+  .mobile-menu-label { font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(200,169,110,.5); }
   .mobile-close-btn {
     background: none; border: none; cursor: pointer;
     width: 32px; height: 32px;
@@ -130,7 +109,6 @@
   }
   .mobile-close-btn:hover { background: rgba(200,169,110,.1); }
 
-  /* TOP-aligned nav links (not centered) */
   .mobile-nav-links {
     flex: 1; padding: 0.5rem 0 1rem;
     display: flex; flex-direction: column;
@@ -144,35 +122,21 @@
     border-bottom: 1px solid rgba(200,169,110,.06);
     transition: color .2s, background .2s;
   }
-  .mobile-nav-links li a::after {
-    content: '→'; color: rgba(200,169,110,.3);
-    font-size: .8rem; transition: color .2s, transform .2s;
-  }
+  .mobile-nav-links li a::after { content: '→'; color: rgba(200,169,110,.3); font-size: .8rem; transition: color .2s, transform .2s; }
   .mobile-nav-links li a:hover { color: var(--accent); background: rgba(200,169,110,.04); }
   .mobile-nav-links li a:hover::after { color: var(--accent); transform: translateX(3px); }
   .mobile-nav-links li:last-child a { color: var(--accent); font-weight: 500; border-bottom: none; }
 
-  .mobile-menu-footer {
-    padding: 1.2rem 1.6rem;
-    border-top: 1px solid rgba(200,169,110,.08); flex-shrink: 0;
-  }
-  .mobile-menu-footer p {
-    font-size: .7rem; letter-spacing: .08em;
-    color: rgba(245,242,236,.2); line-height: 1.6;
-  }
+  .mobile-menu-footer { padding: 1.2rem 1.6rem; border-top: 1px solid rgba(200,169,110,.08); flex-shrink: 0; }
+  .mobile-menu-footer p { font-size: .7rem; letter-spacing: .08em; color: rgba(245,242,236,.2); line-height: 1.6; }
 
-  /* HERO */
   #hero {
     min-height: 100vh;
     background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, #1c3a52 100%);
     display: flex; align-items: center; justify-content: center;
     position: relative; overflow: hidden; text-align: center;
   }
-  .hero-bg-dots {
-    position: absolute; inset: 0; opacity: .025;
-    background-image: radial-gradient(circle, #fff 1px, transparent 1px);
-    background-size: 32px 32px;
-  }
+  .hero-bg-dots { position: absolute; inset: 0; opacity: .025; background-image: radial-gradient(circle, #fff 1px, transparent 1px); background-size: 32px 32px; }
   .hero-inner { position: relative; z-index: 2; max-width: 720px; padding: 9rem 2rem 5rem; }
   .hero-eyebrow {
     font-size: .75rem; letter-spacing: .25em; text-transform: uppercase;
@@ -181,62 +145,22 @@
     opacity: 0; animation: fadeUp .7s .1s ease forwards;
   }
   .hero-eyebrow::before, .hero-eyebrow::after { content: ''; width: 2rem; height: 1px; background: var(--accent); flex-shrink:0; }
-  .hero-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(4rem, 8vw, 7rem); font-weight: 300; line-height: 1.0;
-    color: var(--white); margin-bottom: .2rem;
-    opacity: 0; animation: fadeUp .7s .25s ease forwards;
-  }
+  .hero-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(4rem, 8vw, 7rem); font-weight: 300; line-height: 1.0; color: var(--white); margin-bottom: .2rem; opacity: 0; animation: fadeUp .7s .25s ease forwards; }
   .hero-name span { color: var(--accent); font-weight: 600; }
-  .hero-subtitle {
-    font-size: 1rem; color: rgba(245,242,236,.55); letter-spacing: .05em; margin-bottom: .2rem;
-    opacity: 0; animation: fadeUp .7s .35s ease forwards;
-  }
-  .hero-org {
-    font-size: .82rem; color: rgba(200,169,110,.7); letter-spacing: .1em; margin-bottom: 2.4rem;
-    opacity: 0; animation: fadeUp .7s .42s ease forwards;
-  }
-  .hero-value {
-    font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic;
-    color: var(--accent-pale); line-height: 1.6;
-    max-width: 520px; margin: 0 auto 2.8rem;
-    opacity: 0; animation: fadeUp .7s .55s ease forwards;
-  }
-  .hero-divider {
-    width: 2px; height: 3rem; background: linear-gradient(to bottom, var(--accent), transparent);
-    margin: 0 auto 2rem;
-    opacity: 0; animation: fadeUp .7s .48s ease forwards;
-  }
-  .hero-actions {
-    display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;
-    opacity: 0; animation: fadeUp .7s .7s ease forwards;
-  }
-  .btn-primary {
-    background: var(--accent); color: var(--navy); padding: .85rem 2.2rem;
-    border-radius: 2px; text-decoration: none; font-weight: 500; font-size: .88rem;
-    letter-spacing: .06em; transition: background .2s, transform .15s, box-shadow .2s; display: inline-block;
-  }
+  .hero-subtitle { font-size: 1rem; color: rgba(245,242,236,.55); letter-spacing: .05em; margin-bottom: .2rem; opacity: 0; animation: fadeUp .7s .35s ease forwards; }
+  .hero-org { font-size: .82rem; color: rgba(200,169,110,.7); letter-spacing: .1em; margin-bottom: 2.4rem; opacity: 0; animation: fadeUp .7s .42s ease forwards; }
+  .hero-value { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; color: var(--accent-pale); line-height: 1.6; max-width: 520px; margin: 0 auto 2.8rem; opacity: 0; animation: fadeUp .7s .55s ease forwards; }
+  .hero-divider { width: 2px; height: 3rem; background: linear-gradient(to bottom, var(--accent), transparent); margin: 0 auto 2rem; opacity: 0; animation: fadeUp .7s .48s ease forwards; }
+  .hero-actions { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; opacity: 0; animation: fadeUp .7s .7s ease forwards; }
+  .btn-primary { background: var(--accent); color: var(--navy); padding: .85rem 2.2rem; border-radius: 2px; text-decoration: none; font-weight: 500; font-size: .88rem; letter-spacing: .06em; transition: background .2s, transform .15s, box-shadow .2s; display: inline-block; }
   .btn-primary:hover { background: var(--accent-pale); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(200,169,110,.3); }
-  .btn-secondary {
-    border: 1px solid rgba(200,169,110,.4); color: var(--accent-pale); padding: .85rem 2.2rem;
-    border-radius: 2px; text-decoration: none; font-size: .88rem; letter-spacing: .06em;
-    transition: border-color .2s, color .2s, transform .15s; display: inline-block;
-  }
+  .btn-secondary { border: 1px solid rgba(200,169,110,.4); color: var(--accent-pale); padding: .85rem 2.2rem; border-radius: 2px; text-decoration: none; font-size: .88rem; letter-spacing: .06em; transition: border-color .2s, color .2s, transform .15s; display: inline-block; }
   .btn-secondary:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
 
-  /* SHARED */
   section { padding: 6rem 5rem; }
-  .section-eyebrow {
-    font-size: .72rem; letter-spacing: .22em; text-transform: uppercase;
-    color: var(--accent); margin-bottom: 1rem;
-    display: flex; align-items: center; gap: .8rem;
-  }
+  .section-eyebrow { font-size: .72rem; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; display: flex; align-items: center; gap: .8rem; }
   .section-eyebrow::before { content: ''; width: 1.5rem; height: 1px; background: var(--accent); }
-  .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; line-height: 1.15;
-    color: var(--navy); margin-bottom: .8rem;
-  }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; line-height: 1.15; color: var(--navy); margin-bottom: .8rem; }
   .section-title.light { color: var(--white); }
   .reveal { opacity: 0; transform: translateY(32px); transition: opacity .65s ease, transform .65s cubic-bezier(.22,.68,0,1.1); }
   .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -244,19 +168,10 @@
   .reveal-delay-2 { transition-delay: .2s; }
   .reveal-delay-3 { transition-delay: .3s; }
 
-  /* EXPERTISE */
   #expertise { background: var(--white); }
   .expertise-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; margin-top: 3rem; }
-  .expertise-card {
-    border: 1px solid var(--grey-light); padding: 2.4rem 2rem; border-radius: 2px;
-    position: relative; overflow: hidden;
-    transition: border-color .3s, transform .3s, box-shadow .3s;
-  }
-  .expertise-card::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-    background: linear-gradient(to right, var(--accent), var(--accent-pale));
-    transform: scaleX(0); transform-origin: left; transition: transform .4s cubic-bezier(.22,.68,0,1.2);
-  }
+  .expertise-card { border: 1px solid var(--grey-light); padding: 2.4rem 2rem; border-radius: 2px; position: relative; overflow: hidden; transition: border-color .3s, transform .3s, box-shadow .3s; }
+  .expertise-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(to right, var(--accent), var(--accent-pale)); transform: scaleX(0); transform-origin: left; transition: transform .4s cubic-bezier(.22,.68,0,1.2); }
   .expertise-card:hover::before { transform: scaleX(1); }
   .expertise-card:hover { border-color: rgba(200,169,110,.3); transform: translateY(-5px); box-shadow: 0 16px 48px rgba(13,27,42,.08); }
   .expertise-num { font-family: 'Cormorant Garamond', serif; font-size: 4.5rem; font-weight: 600; color: rgba(200,169,110,.35); line-height: 1; margin-bottom: .8rem; transition: color .4s; letter-spacing: -.02em; }
@@ -264,20 +179,13 @@
   .expertise-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--navy); margin-bottom: .8rem; }
   .expertise-text { font-size: .88rem; line-height: 1.75; color: #4a4540; }
 
-  /* ABOUT */
   #about { background: var(--navy); padding: 6rem 5rem; }
-  .about-content { max-width: 720px; margin: 0 auto; text-align: center; }
   .about-text { font-size: .95rem; line-height: 1.85; color: rgba(245,242,236,.72); margin-bottom: 1.4rem; }
   .about-highlights { display: flex; flex-wrap: wrap; justify-content: center; gap: .8rem; margin-top: 2rem; }
-  .highlight-item {
-    display: flex; align-items: center; gap: .4rem; font-size: .82rem; color: var(--accent-pale);
-    padding: .4rem .9rem; border: 1px solid rgba(200,169,110,.15); border-radius: 2px;
-    transition: border-color .2s, color .2s;
-  }
+  .highlight-item { display: flex; align-items: center; gap: .4rem; font-size: .82rem; color: var(--accent-pale); padding: .4rem .9rem; border: 1px solid rgba(200,169,110,.15); border-radius: 2px; transition: border-color .2s, color .2s; }
   .highlight-item:hover { border-color: rgba(200,169,110,.4); color: var(--accent); }
   .highlight-item::before { content: '›'; color: var(--accent); }
 
-  /* TIMELINE */
   #experience { background: var(--grey-light); }
   #experience .section-title { color: var(--navy); }
   .timeline { margin-top: 3rem; position: relative; max-width: 760px; }
@@ -292,30 +200,33 @@
   .timeline-role { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--navy); margin-bottom: .5rem; }
   .timeline-desc { font-size: .84rem; line-height: 1.7; color: #4a4540; }
 
-  /* SKILLS */
+  /* Timeline bullet list for detailed tasks */
+  .timeline-tasks {
+    margin-top: .8rem;
+    padding-left: 0;
+    list-style: none;
+    display: flex; flex-direction: column; gap: .45rem;
+  }
+  .timeline-tasks li {
+    font-size: .82rem; line-height: 1.65; color: #4a4540;
+    display: flex; gap: .6rem; align-items: flex-start;
+  }
+  .timeline-tasks li::before {
+    content: '›';
+    color: var(--accent); font-size: .9rem;
+    flex-shrink: 0; margin-top: .05rem;
+  }
+  .timeline-tasks strong { color: var(--navy); font-weight: 500; }
+
   #skills { background: var(--white); }
   .skills-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; margin-top: 3rem; }
-  .skill-group {
-    background: var(--navy); border: 1px solid rgba(200,169,110,.12);
-    padding: 2rem 1.6rem 1.8rem; border-radius: 16px;
-    transition: transform .3s cubic-bezier(.22,.68,0,1.2), box-shadow .3s, border-color .3s;
-    position: relative; overflow: hidden;
-  }
-  .skill-group::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
-    background: linear-gradient(to right, transparent, rgba(200,169,110,.4), transparent);
-  }
+  .skill-group { background: var(--navy); border: 1px solid rgba(200,169,110,.12); padding: 2rem 1.6rem 1.8rem; border-radius: 16px; transition: transform .3s cubic-bezier(.22,.68,0,1.2), box-shadow .3s, border-color .3s; position: relative; overflow: hidden; }
+  .skill-group::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(to right, transparent, rgba(200,169,110,.4), transparent); }
   .skill-group:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(0,0,0,.25); border-color: rgba(200,169,110,.28); }
   .skill-group-title { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; font-weight: 500; }
-  .skill-tag {
-    display: inline-block; background: rgba(255,255,255,.06); color: rgba(245,242,236,.8);
-    font-size: .78rem; padding: .32rem .85rem; border-radius: 999px;
-    margin: .25rem .2rem 0 0; border: 1px solid rgba(255,255,255,.1);
-    transition: background .2s, color .2s, border-color .2s;
-  }
+  .skill-tag { display: inline-block; background: rgba(255,255,255,.06); color: rgba(245,242,236,.8); font-size: .78rem; padding: .32rem .85rem; border-radius: 999px; margin: .25rem .2rem 0 0; border: 1px solid rgba(255,255,255,.1); transition: background .2s, color .2s, border-color .2s; }
   .skill-tag:hover { background: rgba(200,169,110,.18); color: var(--accent); border-color: rgba(200,169,110,.35); }
 
-  /* CONTACT */
   #contact { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); text-align: center; padding: 7rem 5rem; position: relative; overflow: hidden; }
   #contact::before { content: ''; position: absolute; top: -40%; left: 50%; transform: translateX(-50%); width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(200,169,110,.06) 0%, transparent 70%); pointer-events: none; }
   .contact-tagline { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 300; color: var(--white); max-width: 600px; margin: 1rem auto 3rem; line-height: 1.3; }
@@ -326,20 +237,17 @@
   .contact-info a { color: var(--accent); text-decoration: none; }
   .contact-info a:hover { text-decoration: underline; }
 
-  /* FOOTER */
   footer { background: var(--navy); padding: 1.5rem 5rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(200,169,110,.1); }
   footer span { color: rgba(245,242,236,.3); font-size: .75rem; }
 
   @keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
 
-  /* HERO PHOTO */
   .hero-photo-wrap { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
   .hero-photo-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; filter: brightness(.28) saturate(.8); }
   .hero-photo-wrap::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(13,27,42,.55) 0%, rgba(13,27,42,.35) 50%, rgba(13,27,42,.75) 100%); }
   #hero { position: relative; }
   .hero-inner { position: relative; z-index: 2; }
 
-  /* ABOUT PHOTO */
   #about { position: relative; overflow: hidden; }
   .about-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 5rem; align-items: center; max-width: 1100px; margin: 0 auto; }
   .about-photo-col { position: relative; }
@@ -351,7 +259,6 @@
   .about-badge strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; }
   .about-text-col { padding-left: 1rem; }
 
-  /* TABLET */
   @media (max-width: 960px) {
     nav { padding: 1rem 2rem; }
     section { padding: 4rem 2rem; }
@@ -367,7 +274,6 @@
     footer { padding: 1rem 2rem; flex-direction: column; gap: .5rem; text-align: center; }
   }
 
-  /* MOBILE */
   @media (max-width: 600px) {
     :root { --scroll-offset: 80px; }
     nav { padding: .85rem 1.2rem; }
@@ -427,7 +333,6 @@
     .btn-primary, .btn-secondary { max-width: 100%; }
   }
 
-  /* READING GRADIENT */
   .reading-highlight {
     position: fixed; left: 0; right: 0; height: 220px; pointer-events: none; z-index: 50;
     background: linear-gradient(to bottom, transparent 0%, rgba(200,169,110,.055) 30%, rgba(200,169,110,.10) 50%, rgba(200,169,110,.055) 70%, transparent 100%);
@@ -435,9 +340,6 @@
   }
 </style>
 
-<!-- ═══════════════════════════════════════════════
-     SEO: Structured Data (Schema.org Person)
-     ═══════════════════════════════════════════════ -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -445,8 +347,8 @@
   "name": "Sharon Moses",
   "url": "https://www.sharon-moses.de/",
   "image": "https://www.sharon-moses.de/sharon-moses-portrait.jpg",
-  "jobTitle": "Dual Studentin BWL & Digital Commerce Management",
-  "description": "Dual Studentin bei Accenture Technology Solutions und DHBW Stuttgart mit Fokus auf digitale Transformation, Agile/Scrum und Datenanalyse.",
+  "jobTitle": "Dualer Student BWL & Digital Commerce Management",
+  "description": "Dualer Student bei Accenture Technology Solutions und DHBW Stuttgart mit Fokus auf digitale Transformation, Agile/Scrum und Datenanalyse.",
   "worksFor": {
     "@type": "Organization",
     "name": "Accenture Technology Solutions BV & Co. KG",
@@ -473,9 +375,6 @@
 
 <div class="reading-highlight" id="readingHighlight"></div>
 
-<!-- ═══════════════════════════════════════════════
-     Semantik: <nav> mit aria-label (bereits vorhanden, beibehalten)
-     ═══════════════════════════════════════════════ -->
 <nav role="navigation" aria-label="Hauptnavigation">
   <div class="nav-logo">S. Moses</div>
   <ul class="nav-links">
@@ -509,26 +408,21 @@
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════════
-     Semantik: <main> wraps the primary page content
-     ═══════════════════════════════════════════════ -->
 <main>
 
-  <!-- HERO: role="banner" bereits vorhanden; h1 korrekt gesetzt -->
   <section id="hero" role="banner">
     <div class="hero-bg-dots" aria-hidden="true"></div>
     <div class="hero-photo-wrap">
       <img
         src="sharon-moses-hintergrund-webseite.jpg"
-        alt="Sharon Moses vor dem Accenture Campus Kronberg — Dual Studentin BWL & Digital Commerce Management"
+        alt="Sharon Moses vor dem Accenture Campus Kronberg — Dualer Student BWL & Digital Commerce Management"
         loading="eager"
         width="1920"
         height="1080"
       />
     </div>
     <div class="hero-inner">
-      <p class="hero-eyebrow">Dual Student · Accenture &amp; DHBW Stuttgart</p>
-      <!-- Einziges h1 auf der Seite -->
+      <p class="hero-eyebrow">Dualer Student · Accenture &amp; DHBW Stuttgart</p>
       <h1 class="hero-name">Sharon <span>Moses</span></h1>
       <p class="hero-subtitle">BWL &amp; Digital Commerce Management</p>
       <p class="hero-org">Accenture Technology Solutions · DHBW Stuttgart</p>
@@ -541,10 +435,8 @@
     </div>
   </section>
 
-  <!-- EXPERTISE -->
   <section id="expertise" aria-label="Expertise">
     <p class="section-eyebrow reveal">Strategie trifft Umsetzung</p>
-    <!-- h2: korrekte Hierarchie nach h1 -->
     <h2 class="section-title reveal reveal-delay-1">Drei Kompetenzen,<br>die einen Unterschied machen</h2>
     <div class="expertise-grid">
       <article class="expertise-card reveal reveal-delay-1">
@@ -565,14 +457,13 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
   <section id="about" aria-label="Über mich">
     <div class="about-grid">
       <div class="about-photo-col reveal">
         <div class="about-photo-frame">
           <img
             src="sharon-moses-portrait.jpg"
-            alt="Portrait von Sharon Moses, Dual Studentin BWL & Digital Commerce Management bei Accenture und DHBW Stuttgart"
+            alt="Portrait von Sharon Moses, Dualer Student BWL & Digital Commerce Management bei Accenture und DHBW Stuttgart"
             loading="lazy"
             width="480"
             height="480"
@@ -586,21 +477,37 @@
       <div class="about-text-col">
         <p class="section-eyebrow reveal">Über mich</p>
         <h2 class="section-title light reveal reveal-delay-1">Wo Wirtschaft<br>auf Technik trifft</h2>
-        <p class="about-text reveal reveal-delay-1">Ich bin Sharon Moses — Dual Studentin bei Accenture Technology Solutions und studiere BWL &amp; Digital Commerce Management an der DHBW Stuttgart. Was mich ausmacht: Ich denke wirtschaftlich und arbeite technisch präzise.</p>
+        <p class="about-text reveal reveal-delay-1">Ich bin Sharon Moses — Dualer Student bei Accenture Technology Solutions und studiere BWL &amp; Digital Commerce Management an der DHBW Stuttgart. Was mich ausmacht: Ich denke wirtschaftlich und arbeite technisch präzise.</p>
         <p class="about-text reveal reveal-delay-2">Brüche im Lebenslauf betrachte ich als wertvolle Perspektivwechsel. Mein Hintergrund im Bauingenieurwesen und Management hat mein analytisches Denken geschärft und mir ein stabiles Fundament in der Prozessorganisation gegeben. Diese Expertise setze ich gezielt ein, um die digitale Transformation in komplexen Projektumfeldern aktiv zu gestalten.</p>
         <p class="about-text reveal reveal-delay-3">Analytisches Denken, schnelle Auffassungsgabe und Teamarbeit — das sind keine Phrasen für mich, sondern Eigenschaften, die ich täglich beweise.</p>
       </div>
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
   <section id="experience" aria-label="Berufliche Erfahrung">
     <p class="section-eyebrow reveal">Berufliche Stationen</p>
     <h2 class="section-title reveal reveal-delay-1">Erfahrung, die zählt</h2>
-    <!-- Semantik: <ol> für chronologische Timeline -->
     <ol class="timeline" aria-label="Beruflicher Werdegang von Sharon Moses">
+
+      <!-- Banking Project & Analytics -->
       <li class="timeline-item reveal">
-        <time class="timeline-date" datetime="2024-09">09/2024<br>–&nbsp;Heute</time>
+        <time class="timeline-date" datetime="2025-11">11/2025<br>–&nbsp;Heute</time>
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <article class="timeline-body">
+          <p class="timeline-company">Accenture Technology Solutions BV &amp; Co. KG</p>
+          <h3 class="timeline-role">Banking Project &amp; Analytics</h3>
+          <p class="timeline-desc">Projektmitarbeit im Banking-Umfeld mit Fokus auf datengestützte Wertschöpfung, Advanced Analytics und Business Intelligence.</p>
+          <ul class="timeline-tasks">
+            <li><span><strong>CSAT-Datenintegration:</strong> Systematische Erfassung, Aufbereitung und Einpflege von Customer Satisfaction Loops für strategische Auswertungen.</span></li>
+            <li><span><strong>KPI-Reporting &amp; Power BI Dashboarding:</strong> Datenbasierte Ad-hoc-Analysen, Entwicklung von Power BI-Dashboards und visuelle Aufbereitung von KPIs.</span></li>
+            <li><span><strong>Proposal Management:</strong> Strategische Konzeption und inhaltliche Ausarbeitung von Proposals in PowerPoint.</span></li>
+          </ul>
+        </article>
+      </li>
+
+      <!-- KickStart: korrigierter Zeitraum 10 Wochen -->
+      <li class="timeline-item reveal reveal-delay-1">
+        <time class="timeline-date" datetime="2025-09">09–11/2025</time>
         <div class="timeline-dot" aria-hidden="true"></div>
         <article class="timeline-body">
           <p class="timeline-company">Accenture Technology Solutions BV &amp; Co. KG</p>
@@ -608,7 +515,8 @@
           <p class="timeline-desc">Zentrales 10-wöchiges Trainingsprogramm für Dual-Studierende. Training in Soft Skills, Projektmanagement, Agile/Scrum und Requirements Engineering.</p>
         </article>
       </li>
-      <li class="timeline-item reveal reveal-delay-1">
+
+      <li class="timeline-item reveal reveal-delay-2">
         <time class="timeline-date" datetime="2020-03">03/2020</time>
         <div class="timeline-dot" aria-hidden="true"></div>
         <article class="timeline-body">
@@ -617,6 +525,7 @@
           <p class="timeline-desc">Analyse von Telemetriedaten zur Leistungsbeurteilung von Satelliten- und Kommunikationssystemen. Entwicklung und Optimierung von Algorithmen zur Signalverarbeitung.</p>
         </article>
       </li>
+
       <li class="timeline-item reveal reveal-delay-2">
         <time class="timeline-date" datetime="2019-09">09–11/2019</time>
         <div class="timeline-dot" aria-hidden="true"></div>
@@ -626,6 +535,7 @@
           <p class="timeline-desc">Organisation und Verwaltung zentraler Geschäftsprozesse. Schnittstelle zwischen Pflegepersonal, Patienten und Verwaltung.</p>
         </article>
       </li>
+
       <li class="timeline-item reveal reveal-delay-3">
         <time class="timeline-date" datetime="2019-03">03–05/2019</time>
         <div class="timeline-dot" aria-hidden="true"></div>
@@ -635,10 +545,10 @@
           <p class="timeline-desc">Erstellung von Kennzahlen und Auswertungen für das Projektmanagement. Unterstützung in der Finanz- und Buchführung.</p>
         </article>
       </li>
+
     </ol>
   </section>
 
-  <!-- SKILLS -->
   <section id="skills" aria-label="Kenntnisse und Fähigkeiten">
     <p class="section-eyebrow reveal">Kenntnisse &amp; Fähigkeiten</p>
     <h2 class="section-title reveal reveal-delay-1">Expertise &amp; Fokus</h2>
@@ -662,7 +572,6 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact" aria-label="Kontakt">
     <p class="section-eyebrow reveal" style="justify-content:center">Kontakt</p>
     <h2 class="contact-tagline reveal reveal-delay-1"><em>Gemeinsam neue Perspektiven schaffen.</em></h2>
@@ -676,7 +585,7 @@
     </div>
   </section>
 
-</main><!-- /main -->
+</main>
 
 <footer role="contentinfo">
   <span>© 2026 Sharon Moses</span>
@@ -684,7 +593,6 @@
 </footer>
 
 <script>
-  // Shared smooth scroll function — respects --scroll-offset
   function smoothScrollTo(targetId) {
     const target = document.querySelector(targetId);
     if (!target) return;
@@ -693,7 +601,6 @@
     window.scrollTo({ top, behavior: 'smooth' });
   }
 
-  // Desktop nav links
   document.querySelectorAll('.desktop-link[href^="#"]').forEach(link => {
     link.addEventListener('click', function(e) {
       e.preventDefault();
@@ -701,7 +608,6 @@
     });
   });
 
-  // Mobile menu
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
   const mobileBackdrop = document.getElementById('mobileBackdrop');
@@ -731,7 +637,6 @@
   closeMenuBtn.addEventListener('click', closeMenuFn);
   mobileBackdrop.addEventListener('click', closeMenuFn);
 
-  // Mobile links: close panel first, then scroll with offset
   document.querySelectorAll('.mobile-link').forEach(link => {
     link.addEventListener('click', function(e) {
       e.preventDefault();
@@ -741,10 +646,8 @@
     });
   });
 
-  // ESC closes menu
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenuFn(); });
 
-  // Scroll-reveal
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.12 });
